@@ -15,7 +15,7 @@ xlabel('Mach Number (Ma)', 'FontSize', 12);
 ylabel('T / T_R', 'FontSize', 12);
 title(sprintf('Temperature Ratio  T/T_R  vs Mach Number  (\\gamma = %.2f)', k), ...
       'FontSize', 14);
-xlim([0 11.5]);
+xlim([0 5.5]);
 ylim([0 1.05]);
 set(gca, 'FontSize', 11);
 

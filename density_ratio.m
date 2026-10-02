@@ -14,7 +14,7 @@ xlabel('Mach Number (Ma)', 'FontSize', 12);
 ylabel('\rho / \rho_R', 'FontSize', 12);
 title(sprintf('Density Ratio  \\rho/\\rho_R  vs Mach Number  (\\gamma = %.2f)', k), ...
       'FontSize', 14);
-xlim([0 9.5]);
+xlim([0 5.5]);
 ylim([0 1.05]);
 set(gca, 'FontSize', 11);
 
