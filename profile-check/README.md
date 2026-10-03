@@ -45,6 +45,18 @@ The cosine profile is the only one that turns back hard enough to form a shock f
 
 With γ = 1.4 (the CSV) the exit Mach number is 3.03, the cosine shock moves to x/L = 1.18 and the θ > ν zones grow by 0.01–0.02 in x/L. The shock check gives the same answer for the other three profiles.
 
+## How the shock point (★) is found
+
+The check uses only the wall inside the nozzle. But the waves it sends off travel downstream, so they can meet after the exit.
+
+1. Find where the wall turns back toward the axis. For the cosine that's x/L 0.51–1.0, where θ falls from 22.2° to 0°. Each small turn back sends a weak compression wave into the flow.
+2. Draw each wave as a straight Mach line from the wall, at θ − μ to the axis, with μ = asin(1/M) and M from the 1-D area ratio.
+3. Further along the wall θ is smaller, so the lines slope down more steeply and catch up with the ones ahead. The first crossing of two neighbouring lines is the ★.
+
+For the cosine (γ = 1.25), the first pair leaves the wall 3 mm apart at x = 2.185 m (x/L 0.874), with θ = 8.95° and 8.87° and M = 2.73. The lines point 12.55° and 12.62° below the axis direction and cross at x = 3.02 m, r = 1.04 m (x/L 1.21). That's 0.52 m past the exit. The waves set off at only about 12°, so they travel a long way: left alone, those from x/L 0.9 would reach the axis at 7.1 m.
+
+Past the exit the lines are simply extended, as if the flow carried on as in the nozzle. That's reasonable here because the crossing (r = 1.04 m) lies inside the lip radius of 1.25 m, in the jet core, before the waves reach the jet boundary. The solver's first cosine shock cells are at x = 2.88–3.10 m, r = 0.83–0.90 m. The tool ignores round-nozzle focusing and waves from the lip, which is why the solver's shock sits 0.15–0.2 m closer to the axis.
+
 ## Limits
 
 1-D theory is poor near the throat (|M − 1| < 0.2), and the tool doesn't model the convergent section, viscosity or back pressure. Use it to screen shapes, then run the 2-D solver on the ones you keep.
