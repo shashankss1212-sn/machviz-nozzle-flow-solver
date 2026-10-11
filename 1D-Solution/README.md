@@ -40,7 +40,7 @@ I put every Mach number in the CSV back into the area–Mach relation. The large
 | 10 | 0.058 | 3.923 | 0.0073 |
 | 25 | 0.023 | 5.000 | 0.0019 |
 
-A/A* = 4.34 is the test nozzle in `../profile-check` (D_t 1.2 m, D_e 2.5 m), and its supersonic Mach of 3.026 matches the exit Mach number there.
+A/A* = 4.34 is the test nozzle in [`../Profile-Check`](../Profile-Check) (D_t 1.2 m, D_e 2.5 m), and its supersonic Mach of 3.026 matches the exit Mach number there.
 
 ## Running it
 
