@@ -16,7 +16,7 @@ Part of the MachViz team project at Otto von Guericke University Magdeburg (team
 | `profile_check_4profiles.csv` | Station data, 4,001 points per profile, for bell, super-ellipse, cosine and conical. γ = 1.4. |
 | `profile_check_4profiles.png` | The tool's own figure for the same run (contour, angles, ν − θ margin, 1-D Mach). γ = 1.4. |
 | `pm_bench_4profiles.png` | Output of `pm_bench_plot.py` for the γ = 1.25 run. |
-| `crossing_check_1.png` | The shock check compared with the team's 2-D axisymmetric Euler solver for the four profiles, γ = 1.25. The solver itself is not in this folder. |
+| `crossing_check_1.png` | The shock check compared with the 2-D Euler solver in [`../2D-Solver`](../2D-Solver) for the four profiles, γ = 1.25. That solver run was planar; its result was written out in an axisymmetric layout without being re-solved, so treat the comparison as approximate. |
 
 ## Test case
 
@@ -41,7 +41,7 @@ Without `--theta-n 22 --bell-arc 0` the bell gets the default Rao throat arc (0.
 | Cosine | 22.2° | 0.0° | 0 – 0.18 | Shock starts at x/L = 1.21, in the plume |
 | Conical | 14.6° | 14.6° | 0 – 0.10 | No compression, no shock |
 
-The cosine profile is the only one that turns back hard enough to form a shock from the wall waves. The solver agrees. The solver puts that shock at x/L = 1.15, a little upstream of the tool's 1.21. For the super-ellipse and the cone the solver also finds no wall-generated shock; its first shocks there (x/L 1.76 and 1.81) are Mach discs from over-expansion. For the bell the tool makes no prediction, and the solver shows a shock at x/L = 1.03 after the waves reflect off the axis.
+The cosine profile is the only one that turns back hard enough to form a shock from the wall waves. The solver run agrees on that. It puts the shock at x/L = 1.15, a little upstream of the tool's 1.21. For the super-ellipse and the cone the solver also finds no wall-generated shock; its first shocks there (x/L 1.76 and 1.81) are Mach discs from over-expansion. For the bell the tool makes no prediction, and the solver shows a shock at x/L = 1.03 after the waves reflect off the axis.
 
 With γ = 1.4 (the CSV) the exit Mach number is 3.03, the cosine shock moves to x/L = 1.18 and the θ > ν zones grow by 0.01–0.02 in x/L. The shock check gives the same answer for the other three profiles.
 
@@ -55,7 +55,7 @@ The check uses only the wall inside the nozzle. But the waves it sends off trave
 
 For the cosine (γ = 1.25), the first pair leaves the wall 3 mm apart at x = 2.185 m (x/L 0.874), with θ = 8.95° and 8.87° and M = 2.73. The lines point 12.55° and 12.62° below the axis direction and cross at x = 3.02 m, r = 1.04 m (x/L 1.21). That's 0.52 m past the exit. The waves set off at only about 12°, so they travel a long way: left alone, those from x/L 0.9 would reach the axis at 7.1 m.
 
-Past the exit the lines are simply extended, as if the flow carried on as in the nozzle. That's reasonable here because the crossing (r = 1.04 m) lies inside the lip radius of 1.25 m, in the jet core, before the waves reach the jet boundary. The solver's first cosine shock cells are at x = 2.88–3.10 m, r = 0.83–0.90 m. The tool ignores round-nozzle focusing and waves from the lip, which is why the solver's shock sits 0.15–0.2 m closer to the axis.
+Past the exit the lines are simply extended, as if the flow carried on as in the nozzle. That's reasonable here because the crossing (r = 1.04 m) lies inside the lip radius of 1.25 m, in the jet core, before the waves reach the jet boundary. The solver's first cosine shock cells are at x = 2.88–3.10 m, r = 0.83–0.90 m, 0.15–0.2 m closer to the axis than the tool's estimate. The solver run was planar (see `../2D-Solver/README.md`), so this gap can't be put down to round-nozzle focusing; an `--axisym` run is needed for a like-for-like check.
 
 ## Limits
 
