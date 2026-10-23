@@ -2,7 +2,7 @@
 
 A single Python file (`cd_nozzle_solver_axiconv_openplume_hybrid.py`, about 3,900 lines, numpy + matplotlib) that solves the inviscid compressible flow through a converging-diverging nozzle and, if asked, the jet behind it. The wall-profile check in `../Profile-Check` is compared against its results.
 
-Part of the MachViz team project at Otto von Guericke University Magdeburg (team of 6). I wrote it with an AI coding assistant, ran it and checked its results against 1-D theory.
+Part of the MachViz team project at Otto von Guericke University Magdeburg (team of 6). I wrote it with an AI coding assistant, ran it and checked its results against 1-D theory. My focus was the HLLC/HLL flux scheme, the plume and shock handling, and the warm start (restart onto a finer grid).
 
 ## What it solves
 
