@@ -161,7 +161,7 @@
    * 1st order smears shocks; 2nd order is sharper but can stall near 1e-3
      residual because of limiter chatter.
 
- AUTHOR : Shashank Suresh Srinivasan -- OVGU, Chemical & Energy Engineering
+ AUTHOR : Shashank Suresh Srinivasan and a teammate -- OVGU, Chemical & Energy Engineering
           (MachViz team project; written with an AI coding assistant)
 ================================================================================
 """
