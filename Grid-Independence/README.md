@@ -2,7 +2,7 @@
 
 How much do the results of the solver in [`../2D-Solver`](../2D-Solver) change when the mesh gets finer? I ran the same nozzle and jet on 15 meshes for each of four wall profiles, plus three much finer meshes for the bell, and compared mass flow, thrust and the flow field from one mesh to the next.
 
-Part of the MachViz team project at Otto von Guericke University Magdeburg (team of 6). I ran all meshes with my solver; the post-processing scripts and the Excel workbooks were made with an AI coding assistant.
+Part of the MachViz team project at Otto von Guericke University Magdeburg (team of 6). I ran all meshes with the 2-D solver; the post-processing scripts and the Excel workbooks were made with an AI coding assistant.
 
 ## Case
 
