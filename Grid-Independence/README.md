@@ -38,7 +38,7 @@ Change of each value from the 300×75×231 to the 320×80×246 mesh (last step) 
 | Conical | +0.08 % / +0.94 % | +0.08 % / +0.87 % | 3.055 → 2.962 |
 | Super-ellipse | +0.09 % / +0.95 % | +0.29 % / +2.63 % | 2.368 → 2.351 |
 
-- **Nozzle integrals settle.** Mass flow and wall thrust change by less than 0.1 % per step on the fine meshes (super-ellipse thrust: 0.3 %), and the step size keeps falling. They still drift in one direction, so the values are mesh-converged to about 1 %, not exactly mesh-independent. I didn't extrapolate them (Richardson).
+- **Nozzle integrals settle.** Mass flow and wall thrust change by less than 0.1 % per step on the fine meshes (super-ellipse thrust: 0.3 %), and the step size keeps falling. They still drift in one direction, so the values are mesh-converged to about 1 %, not exactly mesh-independent. For a Richardson extrapolation see the bell meshes below.
 - **Centreline values drift more.** The exit-axis Mach number of the bell still rises 0.4 % per step and that of the cone falls 0.3 %. A single cell on the axis is more sensitive than an integral over the exit plane.
 - **The plume isn't grid-independent.** The peak Mach number in the first shock cell keeps rising (cosine 4.14 → 4.51), the pressure ratio across the shock that closes that cell grows from 21 to 59, and the whole-field difference in the plume between neighbouring meshes reaches 27 % (cosine) and 39 % (bell) of the field range. More cells resolve a stronger shock, and the cycling second cell adds to it.
 - **Thrust check.** The exit-plane and wall-pressure thrust routes differ by 0.6–0.7 % on the finest mesh (super-ellipse 3.1 %), down from 1.1–3.3 % on the coarsest fine mesh.
@@ -67,6 +67,8 @@ Three much finer bell meshes:
 | 3 | 1060×265×815 | 496,875 | 20,000 | 2.03 | 2,382 kg/s | 4.668 MN | 4.03 |
 
 None of these converged: on the 500k mesh the residual swings between about 0.4 and 1.9 for the whole run. The nozzle values carry on the trend of the fine study (2,360 kg/s and 4.62 MN at 45,280 cells) and mass flow and wall thrust change by less than 0.2 % from stage 2 to stage 3. Stage 3 also has a summary taken at iteration 18,666, in a quieter part of the cycle (residual 0.75). Its nozzle values match the iteration-20,000 values to four digits, while the plume differs (10 vs 12 shock structures, peak Mach 4.39 vs 4.51), which shows again that only the nozzle part is steady.
+
+**Richardson extrapolation.** Extrapolating the wall thrust of these three bell meshes puts the 500k value within about 0.5–0.7 % of the extrapolated thrust; the exact figure depends on how the refinement ratio is taken for these unevenly refined meshes. The runs are not converged to tolerance, so this is an estimate, not proof of mesh independence. The calculation file will be added to this folder.
 
 ## Files
 
