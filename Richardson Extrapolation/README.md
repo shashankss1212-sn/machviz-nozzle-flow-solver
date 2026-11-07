@@ -86,7 +86,6 @@ This prints a worked example for the bell thrust, writes `results.csv` and redra
 | `results.csv` | Every set of meshes and every quantity: R, p, extrapolated value, error, GCI, trusted or not |
 | `Richardson_extrapolation_nozzle.xlsx` | The equal-ratio calculation with visible formulas |
 | `richardson_bell_thrust.png` | Bell thrust against mesh spacing |
-| `QUESTIONS.md` | Common questions about the method and the results |
 
 ## Limits
 
