@@ -68,7 +68,7 @@ Three much finer bell meshes:
 
 None of these converged: on the 500k mesh the residual swings between about 0.4 and 1.9 for the whole run. The nozzle values carry on the trend of the fine study (2,360 kg/s and 4.62 MN at 45,280 cells) and mass flow and wall thrust change by less than 0.2 % from stage 2 to stage 3. Stage 3 also has a summary taken at iteration 18,666, in a quieter part of the cycle (residual 0.75). Its nozzle values match the iteration-20,000 values to four digits, while the plume differs (10 vs 12 shock structures, peak Mach 4.39 vs 4.51), which shows again that only the nozzle part is steady.
 
-**Richardson extrapolation.** Extrapolating the wall thrust of these three bell meshes puts the 500k value within about 0.5–0.7 % of the extrapolated thrust; the exact figure depends on how the refinement ratio is taken for these unevenly refined meshes. The runs are not converged to tolerance, so this is an estimate, not proof of mesh independence. The calculation file will be added to this folder.
+**Richardson extrapolation.** Extrapolating the wall thrust of these three bell meshes puts the 500k value within about 0.5–0.7 % of the extrapolated thrust; the exact figure depends on how the refinement ratio is taken for these unevenly refined meshes. The runs are not converged to tolerance, so this is an estimate, not proof of mesh independence. The calculation is in [`../Richardson Extrapolation`](../Richardson%20Extrapolation): the 500k wall thrust is 0.51 % below the extrapolated 4.6915 MN (GCI 0.64 %), and the fine-study meshes 180/240/320 extrapolate to the same value.
 
 ## Files
 
