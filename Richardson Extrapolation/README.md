@@ -1,6 +1,6 @@
 # Richardson extrapolation of the mesh study
 
-This folder estimates what the 2-D solver ([`../../2D-Solver`](../../2D-Solver)) would give on an infinitely fine mesh, and how far the meshes of the grid independence study ([`..`](..)) are from that value.
+This folder estimates what the 2-D solver ([`../2D-Solver`](../2D-Solver)) would give on an infinitely fine mesh, and how far the meshes of the grid independence study ([`../Grid-Independence`](../Grid-Independence)) are from that value.
 
 It is part of the MachViz team project at Otto von Guericke University Magdeburg (team of 6). It applies the Richardson method from the bend-pipe exercise of our OpenFOAM course to the solver results. The calculation script and the Excel workbook were made with an AI coding assistant.
 
@@ -46,14 +46,14 @@ Steps 1 to 6 follow the bend-pipe exercise from our OpenFOAM course, which assum
 | Conical, 180 / 240 / 320 | 4.7048 MN | 0.55 | 2.91 % | 2,399.6 kg/s |
 | Super-ellipse, 180 / 240 / 320 | 4.4375 MN | 2.16 | 1.30 % | 2,399.4 kg/s |
 
-- Bell and conical differ by 0.3 % after extrapolation, less than their uncertainty. On the finest common mesh the bell is ahead (see the ranking in [`../README.md`](../README.md)), but the extrapolated values cannot separate the two. Cosine and super-ellipse stay lower by more than the uncertainty.
+- Bell and conical differ by 0.3 % after extrapolation, less than their uncertainty. On the finest common mesh the bell is ahead (see the ranking in [`../Grid-Independence/README.md`](../Grid-Independence/README.md)), but the extrapolated values cannot separate the two. Cosine and super-ellipse stay lower by more than the uncertainty.
 - `results.csv` also has exit-plane thrust, Isp, C_d and mass-averaged exit Mach. Several of them fail step 8 on the 180/240/320 meshes. Those runs stopped at 40,000 iterations with residuals between 10⁻⁴ and 8 × 10⁻², and for quantities that barely change between meshes the leftover iteration error is as large as the mesh effect.
 
 ## Input data
 
 `input_data.csv` holds the 15 runs used. The values are copied unchanged from the summary files in this repository:
-- the fine-study rows from `../<Profile>/fine_summary_all_levels.csv`;
-- the 100k/250k/500k rows from `../Bell-500k-Cells/stage*_summary.csv` (iteration 20,000 for the 500k mesh).
+- the fine-study rows from `../Grid-Independence/<Profile>/fine_summary_all_levels.csv`;
+- the 100k/250k/500k rows from `../Grid-Independence/Bell-500k-Cells/stage*_summary.csv` (iteration 20,000 for the 500k mesh).
 
 Only the column names are shorter:
 
@@ -71,7 +71,7 @@ Only the column names are shorter:
 ## Run it
 
 ```
-pip install -r requirements.txt
+pip install numpy pandas matplotlib
 python richardson.py
 ```
 
